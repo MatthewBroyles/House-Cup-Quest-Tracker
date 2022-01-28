@@ -103,7 +103,9 @@ localStorage.setItem('Color', document.getElementById('myselect').value);
 function loadColor(){
     if(localStorage.getItem('Color')){
         document.getElementById('myselect').value = localStorage.getItem('Color');
-        //document.getElementById('myselect').value = localStorage.getItem('Color');
+        changeColor();
+    } else{
+        document.getElementById('myselect').value = 'Purple';
         changeColor();
     }
 }

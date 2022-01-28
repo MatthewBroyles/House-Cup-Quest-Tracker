@@ -53,7 +53,7 @@ body {
       margin-right: 5px;
   }
   #Value{
-    margin-left: auto;
+    margin-left: 15vw;
   }
   #house{
     font-size: 2vw;
@@ -138,6 +138,7 @@ body {
   width: 100vw;
   color: white;
   background-image: url("./images/metal.jpg"); 
+  border-bottom: 5px solid black;
 }
 option{
   background-color: black;
