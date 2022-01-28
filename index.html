@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Quicksand:wght@500&display=swap" rel="stylesheet">    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='./style.css'>
+    <title>Quest Tracker</title>
+
+    
+
+</head>
+<body>
+    <div class='line'>
+        
+    </div>
+     <div id='Header'>
+        <select id="myselect" onchange="changeColor()" placeholder='Purple'>
+            <option value="Purple">Purple</option>
+            <option value="Orange">Orange</option>
+            <option value="Green">Green</option>
+            <option value="Blue">Blue</option>
+        </select>
+        <span id="house">HOUSE OF METAL CUP QUEST TRACKER</span>
+        <span id='Value'>Points accumulated this week: </span>
+        <div id='Timers'>
+            <div id="dailyTimerDiv">
+                <span id="DailyTimerLabel">Daily Reset: </span>
+                <time id="DailyTimer">12:12:12</time>
+            </div>
+            <div id='weeklyTimerDiv'>
+            <span id="WeeklyTimerLabel">Weekly Reset: </span>
+            <time id="WeeklyTimer"></time>
+            </div>
+        </div>
+    </div> 
+    <div class='line'>
+        
+    </div>
+    <div id='Categories'>
+        <div id='Daily' class='popout' onclick="toggleSub('DailySub')">
+            <img class='starTitle' src='./images/Star_02.png'/>
+           <span id="DailyTitle">Daily Quest</span>     
+        </div>
+        <div id='DailySub'>
+            <div id='Daily1'  class='popout' onclick="toggleStar('Daily1', 2)">
+                <img class='star' src='./images/Star_02.png'/>
+                <span>(2 pts) Recognize someone - Culture Kudos Slack Channel</span>
+            </div>
+            <div id='Daily2'  class='popout' onclick="toggleStar('Daily2', 2)">
+                <img class='star' src='./images/Star_02.png'/>
+                <span>(2 pts) Receive recognition from student - Culture Kudos Slack Channel</span>
+            </div>
+            <div id='Daily3'  class='popout' onclick="toggleStar('Daily3', 2)">
+                <img class='star' src='./images/Star_02.png'/>
+                <span>(2 pts) Receive recognition from staff - Culture Kudos Slack Channel</span>
+            </div>
+        </div>
+        <div id='Weekly' class='popout' onclick="toggleSub('WeeklySub')">
+            <img class='starTitle' src='./images/Star_02.png'/>
+            <span id="WeeklyTitle">Weekly Quest</span>  
+        </div>
+        <div id='WeeklySub'>
+            <div id='Weekly1'  class='popout' onclick="toggleStar('Weekly1', 5)">
+                <img class='star' src='./images/Star_02.png'/>
+                <span>(5 pts) Participate in the picture challenge/scavenger hunt</span>
+            </div>
+            <div id='Weekly2'  class='popout' onclick="toggleStar('Weekly2', 2)">
+                <img class='star' src='./images/Star_02.png'/>
+                <span>(2 pts) Post on linkedIn about cohort progress!</span>
+            </div>
+            <div id='Weekly3'  class='popout' onclick="toggleStar('Weekly3', 5)">
+                <img class='star' src='./images/Star_02.png'/>
+                <span>(5 pts) Present side project idea to instructor</span>
+            </div>
+        </div>
+        <div id='Event' class='popout' onclick="toggleSub('EventSub')">
+            <img class='starTitle' src='./images/Star_02.png'/>
+            <span id="EventTitle" >Event Quest</span>  
+        </div>
+        <div id='EventSub'>
+            <div id='Event1'  class='popout' onclick="toggleStar('Event1', 2)">
+                <img class='star' src='./images/Star_02.png'/>
+                <span>(2 pts) Ask a question during a panel discussion</span>
+            </div>
+            <div id='Event2'  class='popout' onclick="toggleStar('Event2', 5)">
+                <img class='star' src='./images/Star_02.png'/>
+                <span>(5 pts) Win a bonus challenge/game/other</span>
+            </div>
+            <div id='Event3'  class='popout' onclick="toggleStar('Event3', 10)">
+                <img class='star' src='./images/Star_02.png'/>
+                <span>(10 pts) Attend Networking Event</span>
+            </div>
+        </div>
+        <div id='Other' class='popout' onclick="toggleSub('OtherSub')">
+            <img class='starTitle' src='./images/Star_02.png'/>
+            <span id="OtherTitle">Other Quest</span>  
+        </div>
+        <div id='OtherSub'>
+            <div id='Other1'  class='popout' onclick="toggleStar('Other1', 5)">
+                <img class='star' src='./images/Star_02.png'/>
+                <span>(5 pts) Use 2 prong approach</span>
+            </div>
+            <div id='Other2'  class='popout' onclick="toggleStar('Other2', 10)">
+                <img class='star' src='./images/Star_02.png'/>
+                <span>(10 pts) Schedule additional tech/behavioral mock interview</span>
+            </div>
+        </div>
+    </div>
+    <a href='https://github.com/matthewbroyles' target="_blank" id='authorlink'><span id='author'>Matthew Broyles</span></a>
+    <script src="./index.js" type="text/javascript"></script>
+</body>
+</html>
