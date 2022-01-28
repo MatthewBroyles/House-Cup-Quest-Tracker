@@ -80,7 +80,24 @@ function loadStars(){
 }
 
 function changeColor(){
+   console.log(window.getComputedStyle(document.body).backgroundImage); 
 console.log(document.getElementById('myselect').value);
+switch (document.getElementById('myselect').value) {
+    case 'Orange':
+        document.body.style.backgroundImage = "linear-gradient(-45deg, #FFAC64, #D9863E, #DE8538, #C9650E)"
+        break;
+    case 'Green':
+        document.body.style.backgroundImage = "linear-gradient(-45deg, #55df87, #31a559, #204d2f, #0b1a10)"
+        break;
+    case 'Purple':
+        document.body.style.backgroundImage = "linear-gradient(-45deg, #A352DE, #6E33A2, #472866, #230D3B)"
+        break;
+    case 'Blue':
+        console.log('background pls change smile')
+        document.body.style.backgroundImage = "linear-gradient(-45deg, #88CDF6, #54aee6, #2D82B5, #015C92)"
+        break;
+}
+localStorage.setItem('Color', document.getElementById('myselect'));
 }
 
 function checkParentStar(){
