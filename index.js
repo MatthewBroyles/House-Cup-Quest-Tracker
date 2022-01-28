@@ -97,7 +97,15 @@ switch (document.getElementById('myselect').value) {
         document.body.style.backgroundImage = "linear-gradient(-45deg, #88CDF6, #54aee6, #2D82B5, #015C92)"
         break;
 }
-localStorage.setItem('Color', document.getElementById('myselect'));
+localStorage.setItem('Color', document.getElementById('myselect').value);
+}
+
+function loadColor(){
+    if(localStorage.getItem('Color')){
+        document.getElementById('myselect').value = localStorage.getItem('Color');
+        //document.getElementById('myselect').value = localStorage.getItem('Color');
+        changeColor();
+    }
 }
 
 function checkParentStar(){
@@ -162,3 +170,4 @@ updateWeeklyTime();
 loadStars();
 checkParentStar();
 updateValue(0);
+loadColor();
